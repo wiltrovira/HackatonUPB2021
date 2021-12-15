@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     android:padding="16dp"
     tools:context=".LoginActivity">
 
@@ -15,7 +16,8 @@
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_baseline_arrow_back_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck" />
 
 
     <ImageView
@@ -35,7 +37,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/textView_misContactos"
-        android:textSize="32dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,10 +54,15 @@
         android:drawablePadding="8dp"
         android:ems="10"
         android:hint="@string/field_nombreContacto"
+        android:importantForAutofill="no"
         android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_misDatos" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_misDatos"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/et_apellidoContacto"
@@ -64,10 +73,15 @@
         android:drawablePadding="8dp"
         android:ems="10"
         android:hint="@string/field_apellidoContacto"
+        android:importantForAutofill="no"
         android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_nombreContacto" />
+        app:layout_constraintTop_toBottomOf="@+id/et_nombreContacto"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/et_correoElectronicoContacto"
@@ -78,10 +92,15 @@
         android:drawablePadding="8dp"
         android:ems="10"
         android:hint="@string/field_correoElectronicoContacto"
+        android:importantForAutofill="no"
         android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_apellidoContacto" />
+        app:layout_constraintTop_toBottomOf="@+id/et_apellidoContacto"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/et_telefonoContacto"
@@ -92,10 +111,15 @@
         android:drawablePadding="8dp"
         android:ems="10"
         android:hint="@string/field_telefonoContacto"
+        android:importantForAutofill="no"
         android:inputType="phone"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_correoElectronicoContacto" />
+        app:layout_constraintTop_toBottomOf="@+id/et_correoElectronicoContacto"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/et_relacionContacto"
@@ -106,10 +130,15 @@
         android:drawablePadding="8dp"
         android:ems="10"
         android:hint="@string/field_relacionContacto"
+        android:importantForAutofill="no"
         android:inputType="textCapCharacters"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_telefonoContacto" />
+        app:layout_constraintTop_toBottomOf="@+id/et_telefonoContacto"
+        tools:ignore="TextContrastCheck" />
 
 
     <Button
@@ -118,6 +147,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/button_actualizarDatos"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_relacionContacto" />
@@ -127,8 +158,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_developedBy"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

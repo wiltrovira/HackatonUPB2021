@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     android:padding="16dp"
     tools:context=".LoginActivity">
 
@@ -15,17 +16,8 @@
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_baseline_arrow_back_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/img_Logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/mintic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck" />
 
     <EditText
         android:id="@+id/et_username"
@@ -36,10 +28,15 @@
         android:drawablePadding="8dp"
         android:ems="10"
         android:hint="@string/field_userName"
+        android:importantForAutofill="no"
         android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_crearMiCuenta" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_crearMiCuenta"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/et_password"
@@ -50,11 +47,16 @@
         android:drawablePadding="8dp"
         android:ems="10"
         android:hint="@string/field_password"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
 
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_username" />
+        app:layout_constraintTop_toBottomOf="@+id/et_username"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/et_rePassword"
@@ -65,24 +67,30 @@
         android:drawablePadding="8dp"
         android:ems="10"
         android:hint="@string/field_rePassword"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
 
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+        app:layout_constraintTop_toBottomOf="@+id/et_password"
+        tools:ignore="TextContrastCheck" />
 
 
     <TextView
         android:id="@+id/tv_crearMiCuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="@string/textView_register"
-        android:textSize="32dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_Logo" />
+        tools:layout_editor_absoluteY="132dp" />
 
     <Button
         android:id="@+id/btn_createAccount"
@@ -98,10 +106,12 @@
         android:id="@+id/tv_areNew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:padding="8dp"
 
         android:text="@string/text_alreadyAccount"
+        android:textColor="@color/textColorSaludEstadoLocation"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toStartOf="@id/tv_createAccount"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,6 +123,8 @@
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:text="@string/text_login"
+        android:textColor="@color/textColorSaludEstadoLocation"
+        android:textColorHint="@color/white"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_areNew"
@@ -123,8 +135,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_developedBy"
+        android:textColor="@color/textColorSaludEstadoLocation"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="152dp"
+        android:layout_height="141dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logo256x256" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

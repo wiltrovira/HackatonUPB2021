@@ -73,4 +73,10 @@
     <string name="dialog_estaSeguro">¿Está seguro que desea continuar?</string>
     <string name="dialog_botonContinuar">Continuar</string>
     <string name="dialog_botonCancelar">Cancelar</string>
+    <string name="msjDatos">Mis Datos</string>
+    <string name="msjContactos">Mis contactos</string>
+    <string name="msjWhatsapp">Whatsapp</string>
+    <string name="msjHistorial">Mi historial</string>
+    <string name="msjLogout">Logout</string>
+    <string name="msjEmergencia">EMERGENCIA</string>
 </resources>
