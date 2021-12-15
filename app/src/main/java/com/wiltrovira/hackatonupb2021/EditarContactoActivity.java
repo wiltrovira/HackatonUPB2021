@@ -55,7 +55,6 @@ public class EditarContactoActivity extends AppCompatActivity {
         etTelefono = findViewById(R.id.et_telefonoContacto);
         etRelacion = findViewById(R.id.et_relacionContacto);
 
-
         /*
         Botón Actualizar contacto
          */

@@ -6,10 +6,10 @@ import java.util.Date;
 import java.util.TimeZone;
 
 
-public class ReporteEstadoDTO {
+public class MiHistorialDTO {
 
     public enum CATEGORIA_EVENTOS{
-        DERRUMBRES,
+        DERRUMBES,
         INUNDACIONES,
         HURACANES,
         TERREMOTOS,
@@ -19,50 +19,53 @@ public class ReporteEstadoDTO {
         OTROS_EVENTOS
     }
 
-//
-//    public static final String CATEGORIA_DERRUMBES = "DERRUMBES";
-//    public static final String CATEGORIA_INUNDACIONES = "INUNDACIONES";
-//    public static final String CATEGORIA_HURACANES = "HURACANES";
-//    public static final String CATEGORIA_TERREMOTOS = "TERREMOTOS";
-//    public static final String CATEGORIA_INCENDIOS = "INCENDIOS";
-//    public static final String CATEGORIA_VOLCANES = "VOLCANES";
-//    public static final String CATEGORIA_TSUNAMIS = "TSUNAMIS";
-//    public static final String CATEGORIA_OTROS_EVENTOS = "OTROS EVENTOS";
-
-
-
+    private int mIdHistoria;
     private int mIdUsuario;
-    private String mFechaReporte;
+    private long mFechaReporte;
     private int mEstadoSalud;
     private String mCategoriaEvento;
+    private String mUbicacion;
+    private String mUbicacionDescripcion;
 
-    public ReporteEstadoDTO(int vIdUsuario, String vFechaReporte, int vEstadoSalud, String vCategoriaEvento) {
+    public MiHistorialDTO(int vIdHistoria, int vIdUsuario, long vFechaReporte, String vUbicacion, String vUbicacionDescripcion, int vEstadoSalud, String vCategoriaEvento) {
+        this.mIdHistoria = vIdHistoria;
         this.mIdUsuario = vIdUsuario;
         this.mFechaReporte = vFechaReporte;
+        this.mUbicacion = vUbicacion;
+        this.mUbicacionDescripcion = vUbicacionDescripcion;
         this.mEstadoSalud = vEstadoSalud;
         this.mCategoriaEvento= vCategoriaEvento;
     }
 
+    public String getUbicacion() {
+        return this.mUbicacion;
+    }
+
+    public void setUbicacion(String vUbicacion) {
+        this.mUbicacion = vUbicacion;
+    }
+
+    public String getUbicacionDescripcion() {
+        return this.mUbicacionDescripcion;
+    }
+
+    public void setUbicacionDescripcion(String vUbicacionDescripcion) {
+        this.mUbicacionDescripcion = vUbicacionDescripcion;
+    }
+
     public String getDateFormat() {
-//        TimeZone tz = TimeZone.getTimeZone("UTC-5");
-        DateFormat df = new SimpleDateFormat("MMM DD, yyyy"); // Quoted "Z" to indicate UTC, no timezone offset
-//        df.setTimeZone(tz);
-        String nowAsISO = df.format(this.mFechaReporte);
+        long timeMilliseconds = this.mFechaReporte;
+        Date dateObject = new Date(timeMilliseconds);
 
-//
-//        long timeMilliseconds = Long.parseLong(this.mFechaReporte);
-//        Date dateObject = new Date(timeMilliseconds);
-//
-//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM DD, yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM DD, yyyy");
 
-        return nowAsISO; //simpleDateFormat.format(dateObject);
+        return simpleDateFormat.format(dateObject);
     }
 
 
     public String getTimeFormat() {
-
-//        long timeMilliseconds = Long.parseLong(this.mFechaReporte);
-        String dateObject = this.mFechaReporte; //new Date(timeMilliseconds);
+        long timeMilliseconds = this.mFechaReporte;
+        Date dateObject = new Date(timeMilliseconds);
 
         SimpleDateFormat simpleTimeFormat = new SimpleDateFormat("h:mm a");
 
@@ -74,16 +77,24 @@ public class ReporteEstadoDTO {
         return this.mIdUsuario;
     }
 
+    public void setIdHistoria(int vIdHistoria) {
+        this.mIdHistoria = vIdHistoria;
+    }
+
+    public int getIdHistoria() {
+        return this.mIdHistoria;
+    }
+
     public void setIdUsuario(int mIdUsuario) {
         this.mIdUsuario = mIdUsuario;
     }
 
-    public String getFechaReporte() {
+    public long getFechaReporte() {
         return this.mFechaReporte;
     }
 
-    public void setFechaReporte(String mFechaReporte) {
-        this.mFechaReporte = mFechaReporte;
+    public void setFechaReporte(long vFechaReporte) {
+        this.mFechaReporte = vFechaReporte;
     }
 
     public int getEstadoSalud() {

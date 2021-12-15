@@ -4,19 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.content.Intent;
-import android.media.metrics.Event;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import dialogos.DialogoContinuarCancelar;
-import domain.ReporteEstadoDTO;
+import domain.MiHistorialDTO;
 
 /*
  *
  */
-public class EventCategoryActivity extends AppCompatActivity
+public class CategoriasEventoActivity extends AppCompatActivity
         implements DialogoContinuarCancelar.INoticeDialogListenerInterface {
 
     TextView tvDerrumbes, tvInundaciones, tvHuracanes, tvTerremotos, tvIncendios, tvVolcanes, tvTsunamis, tvOtrosEventos;
@@ -47,7 +46,7 @@ public class EventCategoryActivity extends AppCompatActivity
             public void onClick(View v) {
                 //Crea una nueva caja de diálogo
                 DialogoContinuarCancelar dialogoContinuarCancelar = new DialogoContinuarCancelar();
-                dialogoContinuarCancelar.show(getSupportFragmentManager(), String.valueOf(ReporteEstadoDTO.CATEGORIA_EVENTOS.DERRUMBRES));
+                dialogoContinuarCancelar.show(getSupportFragmentManager(), String.valueOf(MiHistorialDTO.CATEGORIA_EVENTOS.DERRUMBES));
             }
         });
 
@@ -59,7 +58,7 @@ public class EventCategoryActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 DialogoContinuarCancelar dialogoContinuarCancelar = new DialogoContinuarCancelar();
-                dialogoContinuarCancelar.show(getSupportFragmentManager(), String.valueOf(ReporteEstadoDTO.CATEGORIA_EVENTOS.INUNDACIONES));
+                dialogoContinuarCancelar.show(getSupportFragmentManager(), String.valueOf(MiHistorialDTO.CATEGORIA_EVENTOS.INUNDACIONES));
             }
         });
 
@@ -71,7 +70,7 @@ public class EventCategoryActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 DialogoContinuarCancelar dialogoContinuarCancelar = new DialogoContinuarCancelar();
-                dialogoContinuarCancelar.show(getSupportFragmentManager(), String.valueOf(ReporteEstadoDTO.CATEGORIA_EVENTOS.HURACANES));
+                dialogoContinuarCancelar.show(getSupportFragmentManager(), String.valueOf(MiHistorialDTO.CATEGORIA_EVENTOS.HURACANES));
             }
         });
 
@@ -83,7 +82,7 @@ public class EventCategoryActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 DialogoContinuarCancelar dialogoContinuarCancelar = new DialogoContinuarCancelar();
-                dialogoContinuarCancelar.show(getSupportFragmentManager(), String.valueOf(ReporteEstadoDTO.CATEGORIA_EVENTOS.TERREMOTOS));
+                dialogoContinuarCancelar.show(getSupportFragmentManager(), String.valueOf(MiHistorialDTO.CATEGORIA_EVENTOS.TERREMOTOS));
             }
         });
 
@@ -95,7 +94,7 @@ public class EventCategoryActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 DialogoContinuarCancelar dialogoContinuarCancelar = new DialogoContinuarCancelar();
-                dialogoContinuarCancelar.show(getSupportFragmentManager(), String.valueOf(ReporteEstadoDTO.CATEGORIA_EVENTOS.INCENDIOS));
+                dialogoContinuarCancelar.show(getSupportFragmentManager(), String.valueOf(MiHistorialDTO.CATEGORIA_EVENTOS.INCENDIOS));
             }
         });
 
@@ -107,7 +106,7 @@ public class EventCategoryActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 DialogoContinuarCancelar dialogoContinuarCancelar = new DialogoContinuarCancelar();
-                dialogoContinuarCancelar.show(getSupportFragmentManager(), String.valueOf(ReporteEstadoDTO.CATEGORIA_EVENTOS.VOLCANES));
+                dialogoContinuarCancelar.show(getSupportFragmentManager(), String.valueOf(MiHistorialDTO.CATEGORIA_EVENTOS.VOLCANES));
             }
         });
 
@@ -119,7 +118,7 @@ public class EventCategoryActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 DialogoContinuarCancelar dialogoContinuarCancelar = new DialogoContinuarCancelar();
-                dialogoContinuarCancelar.show(getSupportFragmentManager(), String.valueOf(ReporteEstadoDTO.CATEGORIA_EVENTOS.TSUNAMIS));
+                dialogoContinuarCancelar.show(getSupportFragmentManager(), String.valueOf(MiHistorialDTO.CATEGORIA_EVENTOS.TSUNAMIS));
             }
         });
 
@@ -131,7 +130,7 @@ public class EventCategoryActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 DialogoContinuarCancelar dialogoContinuarCancelar = new DialogoContinuarCancelar();
-                dialogoContinuarCancelar.show(getSupportFragmentManager(), String.valueOf(ReporteEstadoDTO.CATEGORIA_EVENTOS.OTROS_EVENTOS));
+                dialogoContinuarCancelar.show(getSupportFragmentManager(), String.valueOf(MiHistorialDTO.CATEGORIA_EVENTOS.OTROS_EVENTOS));
             }
         });
     }
@@ -144,39 +143,16 @@ public class EventCategoryActivity extends AppCompatActivity
     @Override
     public void onDialogPositiveClick(DialogFragment dialog) {
         Toast.makeText(
-                EventCategoryActivity.this,
+                CategoriasEventoActivity.this,
                 "Confirmado: " + dialog.getTag(),
                 Toast.LENGTH_SHORT)
                 .show();
 
-        Intent reportarEventoIntent = new Intent (EventCategoryActivity.this, ReportarEventoActivity.class);
+        Intent reportarEventoIntent = new Intent (CategoriasEventoActivity.this, ReportarEventoActivity.class);
         //Envía parámetros a la vista
         reportarEventoIntent.putExtra("paramCategoriaEvento", dialog.getTag());
+        reportarEventoIntent.putExtra("paramModoEditarAgregar", "AGREGAR");
         startActivity(reportarEventoIntent);
-
-        //
-//        if (dialog.getTag() != null) {
-//            switch(dialog.getTag()){
-//                case "DERRUMBES":
-//                    break;
-//                case "INUNDACIONES":
-//                    break;
-//                case "HURACANES":
-//                    break;
-//                case "TERREMOTOS":
-//                    break;
-//                case "INCENDIOS":
-//                    break;
-//                case "VOLCANES":
-//                    break;
-//                case "TSUNAMIS":
-//                    break;
-//                case "OTROS_EVENTOS":
-//                    break;
-//                default:
-//                    throw new IllegalStateException("Tag no esperado en el cuadro de diálogo: " + dialog.getTag());
-//            }
-//        }
 
         return;
     }
@@ -189,7 +165,7 @@ public class EventCategoryActivity extends AppCompatActivity
     @Override
     public void onDialogNegativeClick(DialogFragment dialog) {
         Toast.makeText(
-                EventCategoryActivity.this,
+                CategoriasEventoActivity.this,
                 "Acción cancelada: " + dialog.getTag(),
                 Toast.LENGTH_SHORT)
                 .show();

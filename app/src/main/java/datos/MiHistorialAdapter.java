@@ -17,10 +17,10 @@ import com.wiltrovira.hackatonupb2021.R;
 import java.text.DecimalFormat;
 import java.util.List;
 
-import domain.ReporteEstadoDTO;
+import domain.MiHistorialDTO;
 
-public class ReporteEstadoAdapter extends ArrayAdapter<ReporteEstadoDTO> {
-    public ReporteEstadoAdapter(@NonNull Context context, List<ReporteEstadoDTO> reportesEstado) {
+public class MiHistorialAdapter extends ArrayAdapter<MiHistorialDTO> {
+    public MiHistorialAdapter(@NonNull Context context, List<MiHistorialDTO> reportesEstado) {
         super(context, 0, reportesEstado);
     }
 
@@ -34,7 +34,7 @@ public class ReporteEstadoAdapter extends ArrayAdapter<ReporteEstadoDTO> {
         }
 
         //Ubico el objeto en la posición dentro de la lista
-        ReporteEstadoDTO currentReporteEstado = getItem(position);
+        MiHistorialDTO currentReporteEstado = getItem(position);
 
         //Asocia los campos de la lista con una variable para poder configurar sus valores
         TextView tvEstadoSalud = (TextView) listItemView.findViewById(R.id.tv_estadoSalud);
@@ -48,9 +48,8 @@ public class ReporteEstadoAdapter extends ArrayAdapter<ReporteEstadoDTO> {
         tvEstadoSalud.setText(formatMagnitude(currentReporteEstado.getEstadoSalud()));
         tvEstadoSaludDescripcion.setText(currentReporteEstado.getEstadoSaludDescripcion());
         tvCategoriaEvento.setText(currentReporteEstado.getCategoriaEvento());
-        tvDate.setText(currentReporteEstado.getFechaReporte());
-        tvTime.setText(currentReporteEstado.getFechaReporte());
-
+        tvDate.setText(currentReporteEstado.getDateFormat());
+        tvTime.setText(currentReporteEstado.getTimeFormat());
 
         // Set the proper background color on the magnitude circle.
         // Fetch the background from the TextView, which is a GradientDrawable.

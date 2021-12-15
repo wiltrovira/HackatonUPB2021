@@ -57,8 +57,8 @@
 
     <EditText
         android:id="@+id/et_ubicacion"
-        android:layout_width="401dp"
-        android:layout_height="151dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:drawableStart="@drawable/ic_baseline_location_on_24"
         android:drawablePadding="8dp"
@@ -71,8 +71,8 @@
 
     <EditText
         android:id="@+id/et_ubicacionDescripcion"
-        android:layout_width="386dp"
-        android:layout_height="190dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:drawableStart="@drawable/ic_baseline_description_24"
         android:drawablePadding="8dp"
         android:ems="20"

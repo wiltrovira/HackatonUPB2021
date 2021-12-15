@@ -12,7 +12,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.sql.Date;
+import java.sql.SQLException;
+
 import application.HackatonUPB2021Application;
+import datos.ContactoDaoSQLite;
+import datos.MiHistorialDaoSQLite;
+import domain.ContactoDTO;
+import domain.MiHistorialBuilder;
+import domain.MiHistorialDTO;
 
 public class ReportarEventoActivity extends AppCompatActivity {
 
@@ -22,11 +30,13 @@ public class ReportarEventoActivity extends AppCompatActivity {
     TextView tvCategoriaEvento;
     Button btnReportarEvento;
 
-//
+    //
     //Lee las preferencias del usuario
     SharedPreferences preferenciasUsuario = HackatonUPB2021Application.getPreferenciasUsuario();
 
     String paramCategoriaEvento = "";
+    String paramModoEditarAgregar = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +50,20 @@ public class ReportarEventoActivity extends AppCompatActivity {
         btnAtras = findViewById(R.id.img_Back);
         tvCategoriaEvento = findViewById(R.id.tv_categoriaEvento);
         btnReportarEvento = findViewById(R.id.btn_reportarEvento);
+        etUbicacion = findViewById(R.id.et_ubicacion);
+        etUbicacionDescripcion = findViewById(R.id.et_ubicacionDescripcion);
 
         //Información que viene del formulario HomeActivity
         Intent eventCategoryIntent = getIntent();
         if (eventCategoryIntent != null) {
             paramCategoriaEvento = eventCategoryIntent.getStringExtra("paramCategoriaEvento"); //Categoría o evento reportado
+            paramModoEditarAgregar = eventCategoryIntent.getStringExtra("paramModoEditarAgregar");
             tvCategoriaEvento.setText(paramCategoriaEvento);
         }
 
+        /*
+        Botón Reportar evento
+         */
         btnReportarEvento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,16 +86,51 @@ public class ReportarEventoActivity extends AppCompatActivity {
                 String ubicacionDescripcion = etUbicacionDescripcion.getText().toString();
 
                 //Valida la información ingresada por el usuario
-                if (ubicacion.equals("") || ubicacionDescripcion.equals("")) {
+                if (ubicacion.equals("") && ubicacionDescripcion.equals("")) {
                     Toast.makeText(v.getContext(),
-                            "Por su tranquilidad, recomendamos diligenciar todos los datos",
+                            "Por favor, indique su ubicación o describa cómo llegar a usted",
                             Toast.LENGTH_LONG).show();
                     return;
                 }
 
+                //Objeto que se conecta a la base de datos
+                MiHistorialBuilder miHistorialBuilder = new MiHistorialBuilder();
+                miHistorialBuilder
+                        .setIdUsuario(preferenciaIdUsuario)
+                        .setFechaReporte(System.currentTimeMillis() / 1000L)
+                        .setCategoriaEvento(paramCategoriaEvento)
+                        .setUbicacion(ubicacion)
+                        .setUbicacionDescripcion(ubicacionDescripcion);
+
+                //Realiza la inserción
+                long operacionExitosa = 0;
+                MiHistorialDTO miHistorialDTO = miHistorialBuilder.getMiHistorialDTO();
+                MiHistorialDaoSQLite miHistorialDao = new MiHistorialDaoSQLite(ReportarEventoActivity.this, miHistorialDTO);
+                try {
+                    if (paramModoEditarAgregar.equals("AGREGAR")) {
+                        operacionExitosa = miHistorialDao.insertOne(miHistorialDTO);
+                    } else {
+                        operacionExitosa = miHistorialDao.updateOne(miHistorialDTO);
+                    }
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+                //Si la inserción es exitosa, lo lleva a la pantalla de inicio de sesión
+                if (operacionExitosa > 0) {
+                    Toast.makeText(v.getContext(),
+                            "Evento reportado",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(v.getContext(),
+                            "Hubo un error al guardar el evento reportado",
+                            Toast.LENGTH_LONG).show();
+                }
+
+                Intent miHistorialIntent = new Intent(ReportarEventoActivity.this, MiHistorialActivity.class);
+                startActivity(miHistorialIntent);
             }
         });
-
 
         /*
         Botón atrás

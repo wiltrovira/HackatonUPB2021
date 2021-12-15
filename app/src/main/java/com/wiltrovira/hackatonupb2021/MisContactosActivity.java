@@ -12,17 +12,12 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import application.HackatonUPB2021Application;
 import datos.ContactoDaoSQLite;
 import datos.MisContactosAdapter;
-import datos.ReporteEstadoAdapter;
-import datos.UsuarioDaoSQLite;
 import domain.ContactoDTO;
-import domain.ReporteEstadoDTO;
-import domain.UsuarioDTO;
 
 public class MisContactosActivity extends AppCompatActivity {
 

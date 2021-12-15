@@ -30,10 +30,23 @@ public class BaseDatos {
     public static final String COL_CONTACTS_TELEFONO = "telefono";
     public static final String COL_CONTACTS_RELACION = "relacion";
 
+
+    /*
+    Tabla de historial de eventos
+    */
+    public static final String TBL_HISTORY = "tbl_historial";
+    public static final String COL_HISTORY_USERID = "id_usuario";
+    public static final String COL_HISTORY_HISTORYID = "id_historia";
+    public static final String COL_HISTORY_FECHA_REPORTE = "fecha_reporte";
+    public static final String COL_HISTORY_UBICACION = "ubicacion";
+    public static final String COL_HISTORY_UBICACION_DESCRIPCION = "ubicacion_descripcion";
+    public static final String COL_HISTORY_ESTADO_SALUD = "estado_salud";
+    public static final String COL_HISTORY_CATEGORIA_EVENTO = "categoria_evento";
+
     /**
      *
      */
-    public static void crearBaseDatos(SQLiteDatabase vDb){
+    public static void crearBaseDatos(SQLiteDatabase vDb) {
         //Comando de SQL para crear una tabla
         String createTableContacts = "CREATE TABLE " + TBL_CONTACTS + " (\n" +
                 "    " + COL_CONTACTS_CONTACTOID + " INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
@@ -63,12 +76,25 @@ public class BaseDatos {
                 COL_USERS_USERNAME + "\n" +
                 ");";
 
+        //Comando de SQL para crear una tabla
+        String createTableHistorial = "CREATE TABLE " + TBL_HISTORY + " (\n" +
+                "    " + COL_HISTORY_HISTORYID + " INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
+                "    " + COL_HISTORY_USERID + " INTEGER NOT NULL,\n" +
+                "    " + COL_HISTORY_FECHA_REPORTE + " INTEGER,\n" +
+                "    " + COL_HISTORY_UBICACION + " STRING (100),\n" +
+                "    " + COL_HISTORY_UBICACION_DESCRIPCION + " STRING (200) ,\n" +
+                "    " + COL_HISTORY_ESTADO_SALUD + " INTEGER ,\n" +
+                "    " + COL_HISTORY_CATEGORIA_EVENTO + " STRING (45) \n" +
+                ");";
+
+
         /*
         Ejecuta las sentencias
          */
         vDb.execSQL(createTableUsers); //Crea la tabla de usuarios
         vDb.execSQL(createIndexUsers); //Crea el índice de usuarios
         vDb.execSQL(createTableContacts); //Crea la tabla de contactos
+        vDb.execSQL(createTableHistorial); //Crea la tabla de contactos
 
     }
 }

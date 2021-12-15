@@ -24,7 +24,7 @@ public class HomeActivity extends AppCompatActivity {
     //Lee las preferencias del usuario
     SharedPreferences preferenciasUsuario = HackatonUPB2021Application.getPreferenciasUsuario();
 
-    Button btnWhatsapp, btnLogout, btnCategoriaEvento, btnEstadoSalud, btnMisDatos, btnMisContactos;
+    Button btnWhatsapp, btnLogout, btnReportarEvento, btnEstadoSalud, btnMisDatos, btnMisContactos;
     ImageView imgAtras;
 
     @Override
@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity {
         btnWhatsapp = findViewById(R.id.btn_whatsapp);
         btnLogout = findViewById(R.id.btn_logout);
         imgAtras = findViewById(R.id.img_Back);
-        btnCategoriaEvento = findViewById(R.id.btn_categoriaEvento);
+        btnReportarEvento = findViewById(R.id.btn_categoriaEvento);
         btnEstadoSalud = findViewById(R.id.btn_estadoSalud);
         btnMisDatos = findViewById(R.id.btn_misDatos);
         btnMisContactos = findViewById(R.id.btn_misContactos);
@@ -69,12 +69,12 @@ public class HomeActivity extends AppCompatActivity {
         /**
          * Botón para reportar eventos
          */
-        btnCategoriaEvento.setOnClickListener(new View.OnClickListener() {
+        btnReportarEvento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent categoriaEventosIntent = new Intent(HomeActivity.this, EventCategoryActivity.class);
-                startActivity(categoriaEventosIntent);
+                Intent reportarEventoIntent = new Intent(HomeActivity.this, CategoriasEventoActivity.class);
+                startActivity(reportarEventoIntent);
 
             }
         });
@@ -83,7 +83,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent reporteEstadoSaludIntent = new Intent(HomeActivity.this, ReporteEstadoActivity.class);
+                Intent reporteEstadoSaludIntent = new Intent(HomeActivity.this, MiHistorialActivity.class);
                 startActivity(reporteEstadoSaludIntent);
 
             }
