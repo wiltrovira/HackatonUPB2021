@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Hackaton UPB 2021</string>
+    <string name="field_userName">Usuario</string>
+    <string name="field_password">Contraseña</string>
+    <string name="field_rePassword">Repite la contraseña</string>
+    <string name="field_nombre">Tu nombre</string>
+    <string name="field_apellido">Tu apellido</string>
+    <string name="field_correoElectronico">Tu correo electrónico</string>
+    <string name="field_telefono">Tu número de celular</string>
+    <string name="field_nombreContacto">Nombre del contacto</string>
+    <string name="field_apellidoContacto">Apellido del contacto</string>
+    <string name="field_correoElectronicoContacto">Correo del contacto</string>
+    <string name="field_telefonoContacto">Teléfono del contacto</string>
+    <string name="field_relacionContacto">Relación: Papá, mamá, amigo, esposo...</string>
+    <string name="field_ubicacion">Ubicación o dirección actual</string>
+    <string name="field_ubicacionDescripcion">Descripción o indicaciones para llegar</string>
+
+    <string name="textView_misContactos">Mis contactos</string>
+    <string name="textView_categoriaEvento">Categoría de evento reportado</string>
+
+    <string name="textView_login">Inicio de sesión</string>
+    <string name="textView_register">Crear una cuenta</string>
+    <string name="textView_misDatos">Mis datos</string>
+    <string name="textView_reportarEvento">Reportar evento</string>
+
+    <string name="button_login">Iniciar sesión</string>
+    <string name="button_createAccount">Crear cuenta</string>
+    <string name="button_search">Buscar</string>
+    <string name="button_mostrar">Mostrar</string>
+    <string name="button_actualizarDatos">Actualizar datos</string>
+    <string name="button_reportarEvento">Reportar evento</string>
+
+
+    <string name="text_youAreNew">¿Eres nuevo?</string>
+    <string name="text_alreadyAccount">¿Ya tienes una cuenta?</string>
+
+    <string name="text_createAccount">Crear nueva cuenta</string>
+    <string name="text_login">Iniciar sesión</string>
+    <string name="text_developedBy">Desarrollado por: WYCRA</string>
+
+    <string name="text_busquedaCandidatos">Búsqueda de candidatos</string>
+    <string name="text_searchResultTitle1">Estadísticas candidatos en formación</string>
+    <string name="text_searchResultSubtitle1">Diligencia la siguiente información</string>
+    <string name="button_estadisticas1">Ver estadísticas</string>
+    <string name="text_buscando_registros">Buscando registros...</string>
+    <string name="text_registros_encontrados">%1$d registros encontrados.</string>
+
+    <!-- Category name for phrases [CHAR LIMIT=20] -->
+    <string name="category_derrumbes">Derrumbes y deslizamientos</string>
+
+    <!-- Category name for the vocabulary words for colors [CHAR LIMIT=20] -->
+    <string name="category_inundaciones">Inundaciones y desbordamientos</string>
+
+    <!-- Category name for the vocabulary words for numbers [CHAR LIMIT=20] -->
+    <string name="category_huracanes">Huracanes y vientos fuertes</string>
+
+    <!-- Category name for the vocabulary words for family members [CHAR LIMIT=20] -->
+    <string name="category_terremotos">Terremotos y temblores</string>
+
+    <!-- Category name for phrases [CHAR LIMIT=20] -->
+    <string name="category_incendios">Incendio, fuego y humo</string>
+
+    <!-- Category name for the vocabulary words for colors [CHAR LIMIT=20] -->
+    <string name="category_volcanes">Volcanes, lava y cenizas</string>
+
+    <!-- Category name for the vocabulary words for numbers [CHAR LIMIT=20] -->
+    <string name="category_tsunamis">Tsunamis</string>
+
+    <!-- Category name for the vocabulary words for family members [CHAR LIMIT=20] -->
+    <string name="category_otros">Otros eventos</string>
+    <string name="category_events">Reportar evento</string>
+
+    <string name="dialog_estaSeguro">¿Está seguro que desea continuar?</string>
+    <string name="dialog_botonContinuar">Continuar</string>
+    <string name="dialog_botonCancelar">Cancelar</string>
+</resources>
