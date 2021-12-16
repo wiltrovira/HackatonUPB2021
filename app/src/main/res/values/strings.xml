@@ -13,7 +13,7 @@
     <string name="field_telefonoContacto">Teléfono del contacto</string>
     <string name="field_relacionContacto">Relación: Papá, mamá, amigo, esposo...</string>
     <string name="field_ubicacion">Ubicación o dirección actual</string>
-    <string name="field_ubicacionDescripcion">Descripción o indicaciones para llegar</string>
+    <string name="field_ubicacionDescripcion">Descripción</string>
 
     <string name="textView_misContactos">Mis contactos</string>
     <string name="textView_categoriaEvento">Categoría de evento reportado</string>
