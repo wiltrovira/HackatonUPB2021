@@ -23,12 +23,12 @@
         android:id="@+id/tv_reportarEvento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/textView_reportarEvento"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="32dp"
         android:textStyle="bold"
-        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
@@ -88,12 +88,11 @@
         android:id="@+id/btn_reportarEvento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:text="@string/button_reportarEvento"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_ubicacionDescripcion" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -108,11 +107,74 @@
         android:id="@+id/imageView4"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginTop="16dp"
+        android:layout_margin="16dp"
         android:src="@mipmap/sosfinder"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_salud1"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_margin="8dp"
+
+        android:src="@drawable/ic_baseline_tag_faces_24"
+        app:layout_constraintEnd_toStartOf="@id/iv_salud4"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_ubicacionDescripcion" />
+
+    <ImageView
+        android:id="@+id/iv_salud4"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_margin="8dp"
+
+        android:src="@drawable/ic_baseline_mood_bad_24"
+        app:layout_constraintEnd_toStartOf="@id/iv_salud7"
+        app:layout_constraintStart_toEndOf="@id/iv_salud1"
+        app:layout_constraintTop_toBottomOf="@id/et_ubicacionDescripcion" />
+
+
+    <ImageView
+        android:id="@+id/iv_salud7"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_baseline_medical_services_24"
+
+        app:layout_constraintEnd_toStartOf="@id/iv_salud10"
+        app:layout_constraintStart_toEndOf="@id/iv_salud4"
+        app:layout_constraintTop_toBottomOf="@id/et_ubicacionDescripcion" />
+
+
+    <ImageView
+        android:id="@+id/iv_salud10"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_margin="8dp"
+        android:src="@mipmap/ic_alert"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_salud7"
+        app:layout_constraintTop_toBottomOf="@id/et_ubicacionDescripcion" />
+
+    <TextView
+        android:id="@+id/tv_estadoSaludDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textView_categoriaEvento"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_reportarEvento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_salud1" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,7 @@
 package domain;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.TimeZone;
 
 
 public class MiHistorialDTO {
@@ -57,15 +55,15 @@ public class MiHistorialDTO {
         long timeMilliseconds = this.mFechaReporte;
         Date dateObject = new Date(timeMilliseconds);
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM DD, yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM dd, YYYY");
 
-        return simpleDateFormat.format(dateObject);
+        return simpleDateFormat.format(timeMilliseconds);
     }
 
 
     public String getTimeFormat() {
         long timeMilliseconds = this.mFechaReporte;
-        Date dateObject = new Date(timeMilliseconds);
+         Date dateObject = new Date(timeMilliseconds);
 
         SimpleDateFormat simpleTimeFormat = new SimpleDateFormat("h:mm a");
 

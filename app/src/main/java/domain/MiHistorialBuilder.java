@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Date;
+
 public class MiHistorialBuilder {
 
     private int mIdHistoria;

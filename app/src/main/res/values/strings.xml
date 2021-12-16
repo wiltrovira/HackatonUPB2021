@@ -78,5 +78,5 @@
     <string name="msjWhatsapp">Whatsapp</string>
     <string name="msjHistorial">Mi historial</string>
     <string name="msjLogout">Logout</string>
-    <string name="msjEmergencia">EMERGENCIA</string>
+    <string name="msjEmergencia">PRESIONE AQUÍ PARA EMERGENCIAS</string>
 </resources>
