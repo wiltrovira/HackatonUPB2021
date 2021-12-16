@@ -13,8 +13,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.sql.SQLException;
+import java.util.List;
+
 import Utilities.Validaciones;
 import application.HackatonUPB2021Application;
+import datos.ContactoDaoSQLite;
+import domain.ContactoDTO;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -100,12 +105,25 @@ public class HomeActivity extends AppCompatActivity {
         btnWhatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // Create a fake list of earthquake locations.
+                List<ContactoDTO> misContactos = null;
+                try {
+                    misContactos = new ContactoDaoSQLite(HomeActivity.this, null).selectAll();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+                String telefonoContacto = "";
+                if (misContactos.size() > 0){
+                    telefonoContacto = misContactos.get(0).getTelefono();
+                }
+
                 String mensaje = "Este es un mensaje de prueba desde la app";
-                String telefono = "573124501504";
 
                 Intent whatsappIntent = new Intent();
                 whatsappIntent.setAction(Intent.ACTION_VIEW);
-                String urlWhatsapp = "https://api.whatsapp.com/send?phone=" + telefono + "&text=" + mensaje;
+                String urlWhatsapp = "https://api.whatsapp.com/send?phone=" + telefonoContacto + "&text=" + mensaje;
                 Uri whatsappUri = Uri.parse(urlWhatsapp);
                 whatsappIntent.setData(whatsappUri);
 
