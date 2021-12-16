@@ -79,4 +79,5 @@
     <string name="msjHistorial">Mi historial</string>
     <string name="msjLogout">Logout</string>
     <string name="msjEmergencia">PRESIONE AQUÍ PARA EMERGENCIAS</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

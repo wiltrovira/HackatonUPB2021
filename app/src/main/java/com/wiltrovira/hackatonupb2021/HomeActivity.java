@@ -63,7 +63,10 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent misDatosIntent = new Intent(HomeActivity.this, MisDatosActivity.class);
+                /*Intent misDatosIntent = new Intent(HomeActivity.this, MisDatosActivity.class);
+                startActivity(misDatosIntent);*/
+
+                Intent misDatosIntent = new Intent(HomeActivity.this, MapsActivity.class);
                 startActivity(misDatosIntent);
             }
         });
