@@ -26,7 +26,7 @@ public class ReportarEventoActivity extends AppCompatActivity {
     ImageView btnAtras, btnSalud1, btnSalud4, btnSalud7, btnSalud10;
     EditText etUbicacion, etUbicacionDescripcion;
     TextView tvCategoriaEvento, tvEstadoSaludDescripcion;
-    Button btnReportarEvento;
+    Button btnReportarEvento, btnVerUbicacionActual;
 
     int estadoSalud=0;
 
@@ -51,13 +51,13 @@ public class ReportarEventoActivity extends AppCompatActivity {
         tvCategoriaEvento = findViewById(R.id.tv_categoriaEvento);
         btnReportarEvento = findViewById(R.id.btn_reportarEvento);
         etUbicacion = findViewById(R.id.et_ubicacion);
-        etUbicacionDescripcion = findViewById(R.id.et_ubicacionDescripcion);
+//        etUbicacionDescripcion = findViewById(R.id.et_ubicacionDescripcion);
         btnSalud1 = findViewById(R.id.iv_salud1);
         btnSalud4 = findViewById(R.id.iv_salud4);
         btnSalud7 = findViewById(R.id.iv_salud7);
         btnSalud10 = findViewById(R.id.iv_salud10);
         tvEstadoSaludDescripcion = findViewById(R.id.tv_estadoSaludDescripcion);
-
+        btnVerUbicacionActual = findViewById(R.id.btn_verUbicacionActual);
 
         //Información que viene del formulario HomeActivity
         Intent eventCategoryIntent = getIntent();
@@ -66,6 +66,14 @@ public class ReportarEventoActivity extends AppCompatActivity {
             paramModoEditarAgregar = eventCategoryIntent.getStringExtra("paramModoEditarAgregar");
             tvCategoriaEvento.setText(paramCategoriaEvento);
         }
+
+        btnVerUbicacionActual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent ubicacionActualIntent = new Intent(ReportarEventoActivity.this, MapsActivity.class);
+                startActivity(ubicacionActualIntent);
+            }
+        });
 
         /*
         Botón salud 1
@@ -152,7 +160,7 @@ public class ReportarEventoActivity extends AppCompatActivity {
                         .setIdUsuario(preferenciaIdUsuario)
                         .setFechaReporte(new Date().getTime())
                         .setUbicacion(ubicacion)
-                        .setUbicacionDescripcion(ubicacionDescripcion)
+                        .setUbicacionDescripcion("")
                         .setEstadoSalud(estadoSalud)
                         .setCategoriaEvento(paramCategoriaEvento);
 

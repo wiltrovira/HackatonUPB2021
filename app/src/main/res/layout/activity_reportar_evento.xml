@@ -52,7 +52,7 @@
         android:id="@+id/et_ubicacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:drawableStart="@drawable/ic_baseline_location_on_24"
         android:drawablePadding="8dp"
         android:ems="10"
@@ -64,25 +64,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_categoriaEvento" />
 
-    <EditText
-        android:id="@+id/et_ubicacionDescripcion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_baseline_description_24"
-        android:drawablePadding="8dp"
-        android:ems="20"
-        android:gravity="start|top"
-        android:hint="@string/field_ubicacionDescripcion"
-        android:inputType="textMultiLine"
-        android:lines="5"
-        android:maxLines="10"
-        android:minLines="2"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_ubicacion" />
-
 
     <Button
         android:id="@+id/btn_reportarEvento"
@@ -90,8 +71,8 @@
         android:layout_height="wrap_content"
         android:text="@string/button_reportarEvento"
         app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintEnd_toStartOf="@id/btn_verUbicacionActual"
+        android:layout_margin="8dp"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -121,10 +102,11 @@
         android:layout_margin="8dp"
 
         android:src="@drawable/ic_baseline_tag_faces_24"
+        app:layout_constraintBottom_toTopOf="@+id/tv_estadoSaludDescripcion"
         app:layout_constraintEnd_toStartOf="@id/iv_salud4"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_ubicacionDescripcion" />
+        app:layout_constraintTop_toBottomOf="@+id/et_ubicacion" />
 
     <ImageView
         android:id="@+id/iv_salud4"
@@ -133,9 +115,10 @@
         android:layout_margin="8dp"
 
         android:src="@drawable/ic_baseline_mood_bad_24"
+        app:layout_constraintBottom_toTopOf="@+id/tv_estadoSaludDescripcion"
         app:layout_constraintEnd_toStartOf="@id/iv_salud7"
         app:layout_constraintStart_toEndOf="@id/iv_salud1"
-        app:layout_constraintTop_toBottomOf="@id/et_ubicacionDescripcion" />
+        app:layout_constraintTop_toBottomOf="@+id/et_ubicacion" />
 
 
     <ImageView
@@ -145,9 +128,10 @@
         android:layout_margin="8dp"
         android:src="@drawable/ic_baseline_medical_services_24"
 
+        app:layout_constraintBottom_toTopOf="@+id/tv_estadoSaludDescripcion"
         app:layout_constraintEnd_toStartOf="@id/iv_salud10"
         app:layout_constraintStart_toEndOf="@id/iv_salud4"
-        app:layout_constraintTop_toBottomOf="@id/et_ubicacionDescripcion" />
+        app:layout_constraintTop_toBottomOf="@+id/et_ubicacion" />
 
 
     <ImageView
@@ -157,9 +141,10 @@
         android:layout_margin="8dp"
         android:src="@mipmap/ic_alert"
 
+        app:layout_constraintBottom_toTopOf="@+id/tv_estadoSaludDescripcion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/iv_salud7"
-        app:layout_constraintTop_toBottomOf="@id/et_ubicacionDescripcion" />
+        app:layout_constraintTop_toBottomOf="@+id/et_ubicacion" />
 
     <TextView
         android:id="@+id/tv_estadoSaludDescripcion"
@@ -174,7 +159,16 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_reportarEvento"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_salud1" />
+        app:layout_constraintTop_toBottomOf="@id/iv_salud1" />
+
+    <Button
+        android:id="@+id/btn_verUbicacionActual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Ver ubicación actual"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/btn_reportarEvento" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
