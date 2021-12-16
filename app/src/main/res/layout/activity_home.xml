@@ -186,7 +186,7 @@
         android:layout_width="65dp"
         android:layout_height="13dp"
         android:fontFamily="sans-serif-light"
-        android:text="Salir"
+        android:text="Salir."
         android:textAlignment="center"
         android:textColor="#3B3D43"
         android:textSize="10sp"
