@@ -119,6 +119,13 @@ public class HomeActivity extends AppCompatActivity {
                     telefonoContacto = misContactos.get(0).getTelefono();
                 }
 
+                if (telefonoContacto.equals("")){
+                    Toast.makeText(v.getContext(),
+                            "No hay un teléfono válido",
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
+
                 String mensaje = "Este es un mensaje de prueba desde la app";
 
                 Intent whatsappIntent = new Intent();
