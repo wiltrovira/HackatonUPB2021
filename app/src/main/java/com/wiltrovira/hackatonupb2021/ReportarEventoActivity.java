@@ -144,12 +144,12 @@ public class ReportarEventoActivity extends AppCompatActivity {
 
                 //Datos de usuario y password
                 String ubicacion = etUbicacion.getText().toString();
-                String ubicacionDescripcion = etUbicacionDescripcion.getText().toString();
+//                String ubicacionDescripcion = etUbicacionDescripcion.getText().toString();
 
                 //Valida la información ingresada por el usuario
-                if (ubicacion.equals("") && ubicacionDescripcion.equals("")) {
+                if (ubicacion.equals("") ) {
                     Toast.makeText(v.getContext(),
-                            "Por favor, indique su ubicación o describa cómo llegar a usted",
+                            "Por favor, indique su ubicación",
                             Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -160,7 +160,7 @@ public class ReportarEventoActivity extends AppCompatActivity {
                         .setIdUsuario(preferenciaIdUsuario)
                         .setFechaReporte(new Date().getTime())
                         .setUbicacion(ubicacion)
-                        .setUbicacionDescripcion("")
+                        .setUbicacionDescripcion("Ubicación general")
                         .setEstadoSalud(estadoSalud)
                         .setCategoriaEvento(paramCategoriaEvento);
 
