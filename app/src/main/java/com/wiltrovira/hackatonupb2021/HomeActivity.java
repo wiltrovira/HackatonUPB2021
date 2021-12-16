@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -24,7 +25,8 @@ public class HomeActivity extends AppCompatActivity {
     //Lee las preferencias del usuario
     SharedPreferences preferenciasUsuario = HackatonUPB2021Application.getPreferenciasUsuario();
 
-    Button btnWhatsapp, btnLogout, btnReportarEvento, btnEstadoSalud, btnMisDatos, btnMisContactos;
+    Button btnReportarEvento;
+    ImageButton btnWhatsapp, btnLogout, btnEstadoSalud, btnMisDatos, btnMisContactos;
     ImageView imgAtras;
 
     @Override

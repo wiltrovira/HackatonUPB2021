@@ -20,27 +20,18 @@
 
     <Button
         android:id="@+id/btn_categoriaEvento"
-        android:layout_width="350dp"
-        android:layout_height="360dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="244dp"
-        android:layout_marginEnd="97dp"
-        android:layout_marginBottom="253dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:margin="16dp"
         android:backgroundTint="@color/tan_background"
         android:text="@string/msjEmergencia"
         android:textColor="@color/red"
-        android:textSize="44sp"
+        android:textSize="24sp"
         app:cornerRadius="350dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.74" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/btn_logout"
